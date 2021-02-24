@@ -7,6 +7,7 @@ import { ExperienceBar } from '../components/ExperienceBar';
 import { Profile } from '../components/Profile';
 import Head from 'next/head';
 import styles from '../styles/pages/Home.module.css';
+import { ChallengBox } from '../components/ChallengBox';
 
 
 export default function Home() {
@@ -25,7 +26,7 @@ export default function Home() {
         </div>
 
         <div>
-
+        <ChallengBox/>
         </div>
       </section>
     </div>

@@ -1,10 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { ChallensContext } from '../contexts/ChallensContext';
 import styles from '../styles/components/CountDown.module.css';
 
 let countdownTimeout: NodeJS.Timeout;
 export function CountDown() {
-
-    const [time, setTime] = useState(25 * 60);
+    const{ startNewChallege} =  useContext(ChallensContext);
+    const [time, setTime] = useState(0.1 * 60);
     const [IsActive, setIsActive] = useState(false);
     const [hastFinished, setHashFinished] = useState(false);
     const minutes = Math.floor(time / 60);
@@ -30,6 +31,7 @@ export function CountDown() {
         } else if (IsActive && time === 0) {
             setHashFinished(true);
             setIsActive(false);
+            startNewChallege();
 
         }
     }, [IsActive, time])
@@ -53,7 +55,7 @@ export function CountDown() {
                     disabled
                     className={styles.CountDownButton}
                 >
-                    Ciclo encerradp
+                    Ciclo encerrado
                 </button>
             ) : (
                     <>

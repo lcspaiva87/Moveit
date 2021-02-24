@@ -68,6 +68,6 @@
 }
 .CountDownButton:disabled{
     background: var(--white);
-    color:(--text);
+    color:var(--text);
     cursor: not-allowed;
 }
