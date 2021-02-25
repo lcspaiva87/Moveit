@@ -8,6 +8,7 @@ import { Profile } from '../components/Profile';
 import Head from 'next/head';
 import styles from '../styles/pages/Home.module.css';
 import { ChallengBox } from '../components/ChallengBox';
+import { CountdownProvider } from '../contexts/CountdownContext';
 
 
 export default function Home() {
@@ -17,18 +18,19 @@ export default function Home() {
         <title>Inicio | move.it</title>
       </Head>
       <ExperienceBar />
-      
-      <section>
-        <div>
-          <Profile />
-          <CompletedChallenges />
-          <CountDown/>
-        </div>
+      <CountdownProvider>
+        <section>
+          <div>
+            <Profile />
+            <CompletedChallenges />
+            <CountDown />
+          </div>
 
-        <div>
-        <ChallengBox/>
-        </div>
-      </section>
+          <div>
+            <ChallengBox />
+          </div>
+        </section>
+      </CountdownProvider>
     </div>
 
   )
