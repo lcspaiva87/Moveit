@@ -18,7 +18,7 @@ interface CountdownProviderProps {
 
 export function CountdownProvider({children}:CountdownProviderProps){
     const{ startNewChallege} =  useContext(ChallensContext);
-    const [time, setTime] = useState(0.1 * 60);
+    const [time, setTime] = useState(25 * 60);
     const [IsActive, setIsActive] = useState(false);
     const [hastFinished, setHashFinished] = useState(false);
     const minutes = Math.floor(time / 60);
@@ -29,7 +29,7 @@ export function CountdownProvider({children}:CountdownProviderProps){
     function resetCountDown() {
         clearTimeout(countdownTimeout);
         setIsActive(false);
-        setTime(0.1 * 60);
+        setTime(25 * 60);
         setHashFinished(false);
     }
 

@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
 
 
   return (
-    <ChallegesProvider>
+    
         <Component {...pageProps} />
-    </ChallegesProvider>
+ 
 
 
   )
